@@ -1,0 +1,8 @@
+# The toolkit (ofa/) and the Control Center. Python 3.11+.
+bleak>=0.22          # BLE (BlueZ on Linux)
+qasync>=0.27         # Qt and asyncio on one event loop (Control Center)
+PyQt6>=6.5           # Control Center GUI
+pillow>=10           # screensaver rendering, font and logo tools
+cryptography>=42     # Realtek OTA transfer encryption (flash.py, dfu.py)
+unicorn>=2.0         # offline firmware checkers (ARM emulation)
+capstone>=5.0        # offline firmware checkers (disassembly)

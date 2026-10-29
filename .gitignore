@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# The toolkit's local workspace: YOUR stock firmware, your copy of the vendor app,
+# built candidates, flash journals and the venv. Never committed.
+ofa/artifacts/*
+!ofa/artifacts/README.md
+
+# Firmware images and other binaries, wherever they land
+*.bin
+*.apk
+*.so
+*.elf
+*.o
+*.btsnoop
+*.log
+
+# Screensaver images are yours; keep them out of the repo
+*.jpg
+*.jpeg
+*.png
+!docs/media/*.png
+!docs/media/*.jpg
+
+# Local config (the remote's address)
+config.json
+.env

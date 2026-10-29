@@ -1,0 +1,12 @@
+#!/bin/sh
+# codec_amp — wrapper that runs codec_amp.py with a Python that has `bleak`.
+# Tries the toolkit venv (ofa/artifacts/venv), then system python3 (e.g. a distro
+# python-bleak package). Falls through to whichever imports bleak first.
+DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+for PY in "$DIR/../../ofa/artifacts/venv/bin/python" python3 python; do
+    if "$PY" -c 'import bleak' >/dev/null 2>&1; then
+        exec "$PY" "$DIR/codec_amp.py" "$@"
+    fi
+done
+echo "codec_amp: no Python with 'bleak' found (install python-bleak, or the OFA venv)" >&2
+exit 1

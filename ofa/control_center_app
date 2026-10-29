@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# control_center_app — launch the OFA Remote Control Center (PyQt6 GUI).
+# Mirrors the codec_screensaver wrapper: prefer the OFA venv (PyQt6 + bleak + PIL live
+# there), fall back to system python3. Runs the package with ofa/ on the path.
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PY="$DIR/artifacts/venv/bin/python"
+[ -x "$PY" ] || PY=python3
+cd "$DIR" || exit 1
+exec "$PY" -m control_center "$@"

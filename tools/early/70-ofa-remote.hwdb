@@ -1,0 +1,7 @@
+# One For All Smart Pro Touch (BLE keyboard emulation, vendor 005D product 0001).
+# Its POWER key must never reach logind as KEY_POWER (it powered the PC off on 2026-09-18).
+# Remapped for THIS device only; the case power button is untouched.
+evdev:input:b0005v005Dp0001*
+ KEYBOARD_KEY_70066=f13
+ KEYBOARD_KEY_c0030=f13
+ KEYBOARD_KEY_10081=f13

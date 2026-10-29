@@ -1,0 +1,5 @@
+{
+  "_comment": "Copy to ~/.config/codecos-remote/config.json. addr = the remote's management/config radio (it advertises as 'OFA Smart Control' while ACTIVITIES+DEVICES is held). hid_addr is optional: the slot-1 HID identity, normally derived from addr.",
+  "addr": "XX:XX:XX:XX:XX:XX",
+  "hid_addr": ""
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# codec_screensaver — push a custom image to the OFA remote e-paper screensaver.
+# Auto-picks the bleak venv if present (system python has no bleak), else python3.
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PY="$DIR/artifacts/venv/bin/python"
+[ -x "$PY" ] || PY=python3
+exec "$PY" "$DIR/codec_screensaver.py" "$@"
