@@ -206,13 +206,13 @@ room from about -95 dBm with drops to about -74 dBm with none. Details and RSSI 
 
 ## Workflow for this project
 
-- **Three agents, fixed lanes, written handoffs.** Claude ran the project and the PC
-  side, Codex wrote most of the main-chip patches, and Fable (a Claude model used as a
+- **Three agents, fixed lanes, written handoffs.** A cloud LLM ran the project and the PC
+  side, Codex wrote most of the main-chip patches, and a second cloud model (used as a
   deep-analysis subagent) did static reverse-engineering when evidence stopped making
   sense. The briefs between them are in [`docs/handoffs/`](docs/handoffs/), indexed in
   [`docs/agent-handoffs.md`](docs/agent-handoffs.md).
 - **The author of a patch never audits it.** Codex's firmware was audited read-only by
-  Claude (byte diff, capstone against stock, unicorn emulation) before the author
+  the cloud LLM (byte diff, capstone against stock, unicorn emulation) before the author
   flashed it.
 - **A checker per patch, so an agent can verify without hardware.** Every builder has
   an offline `check_*.py`; `flash.py` will only flash an image it can rebuild
@@ -220,7 +220,7 @@ room from about -95 dBm with drops to about -74 dBm with none. Details and RSSI 
 - **Instruments built so the agent could see.** The screensaver went nowhere until an
   on-device register readback was added for the agents to read; a press/release
   logger did the same for tap-vs-hold.
-- **Knowing when not to act.** Fable found the missing OTA finalize command but refused
+- **Knowing when not to act.** The analysis subagent found the missing OTA finalize command but refused
   to emit a guessed frame for the one step that can brick the screen; the image went
   through the vendor app instead.
 
