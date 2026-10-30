@@ -204,7 +204,7 @@ room from about -95 dBm with drops to about -74 dBm with none. Details and RSSI 
 
 <!-- MEDIA: photo of the DIY antenna standing out of the rear I/O RP-SMA jack. -->
 
-## Workflow for this Project
+## Workflow for this project
 
 - **Three agents, fixed lanes, written handoffs.** Claude ran the project and the PC
   side, Codex wrote most of the main-chip patches, and Fable (a Claude model used as a
